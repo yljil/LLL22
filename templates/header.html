@@ -1,0 +1,46 @@
+<header class="bg-neutral-800 text-white shadow-md">
+    <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
+        <div class="flex items-center">
+            <a class="text-2xl font-bold text-white hover:text-primary transition-all-300">我的博客</a>
+        </div>
+        
+        <!-- 桌面导航 -->
+        <ul class="hidden md:flex space-x-8">
+            <li><a href="/index/" class="text-white hover:text-primary transition-all-300 flex items-center"><i class="fa fa-home mr-1"></i> 首页</a></li>
+            <li><a href="/archive/" class="text-white hover:text-primary transition-all-300 flex items-center"><i class="fa fa-archive mr-1"></i> 归档</a></li>
+            <li><a href="#" class="text-white hover:text-primary transition-all-300 flex items-center"><i class="fa fa-user mr-1"></i> 关于</a></li>
+        </ul>
+        
+        <!-- 搜索框 -->
+        <div class="hidden md:block">
+            <form action="/search/" class="relative">
+                <input type="text" name="q" placeholder="搜索文章..." 
+                       class="bg-neutral-700 text-white px-4 py-2 rounded-full w-64 focus:outline-none focus:ring-2 focus:ring-primary/50">
+                <button type="submit" class="absolute right-3 top-1/2 transform -translate-y-1/2 text-neutral-400 hover:text-white transition-all-300">
+                    <i class="fa fa-search"></i>
+                </button>
+            </form>
+        </div>
+        
+        <!-- 移动端菜单按钮 -->
+        <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+            <i class="fa fa-bars text-xl"></i>
+        </button>
+    </nav>
+    
+    <!-- 移动端导航菜单 -->
+    <div id="mobile-menu" class="hidden md:hidden bg-neutral-700">
+        <div class="container mx-auto px-4 py-3 space-y-3">
+            <a href="/index/" class="block text-white hover:text-primary transition-all-300 py-2">首页</a>
+            <a href="/archive/" class="block text-white hover:text-primary transition-all-300 py-2">归档</a>
+            <a href="#" class="block text-white hover:text-primary transition-all-300 py-2">关于</a>
+            <div class="relative">
+                <input type="text" name="q" placeholder="搜索文章..." 
+                       class="bg-neutral-600 text-white px-4 py-2 rounded-full w-full focus:outline-none focus:ring-2 focus:ring-primary/50">
+                <button type="submit" class="absolute right-3 top-1/2 transform -translate-y-1/2 text-neutral-400 hover:text-white transition-all-300">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>

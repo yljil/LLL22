@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}搜索结果页面{% endblock %}
+{% block main %}
+    <div id="main" class="lg:w-3/4">
+        {% if query %}
+            {% for cp in page.object_list %}
+                <div class="article-card bg-white rounded-lg shadow-card hover:shadow-card-hover transition-all-300 mb-8 overflow-hidden">
+                    <div class="article-header p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <a href="">
+                                <time>{{ cp.object.created|date:"Y-m" }}</time>
+                            </a>
+                            <h1 itemprop="name">
+                                <a href="/posts/{{ cp.object.id }}" target="_blank">
+                                    {{ cp.object.title }}
+                                </a>
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+{% endblock %}

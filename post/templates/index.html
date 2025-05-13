@@ -1,0 +1,62 @@
+
+{% extends 'base.html' %}
+{% block main %}
+    <div class="lg:w-3/4">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">前言</h2>
+        {% for post in postList %}
+            <div class="article-card bg-white rounded-lg shadow-card hover:shadow-card-hover transition-all-300 mb-8 overflow-hidden">
+                <div class="article-header p-6">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-sm text-neutral-500 flex items-center"><i class="fa fa-calendar-o mr-1"></i>{{ post.created }}</span>
+                        <span class="bg-primary/10 text-primary text-sm px-3 py-1 rounded-full hover:bg-primary/20 transition-all-300">{{ post.category.cname }}</span>
+                    </div>
+                    <h1 class="article-title text-2xl md:text-3xl font-bold text-neutral-800 mb-4 hover:text-primary transition-all-300">
+                        {{ post.title }}
+                    </h1>
+                    <h2 class="text-xl font-bold text-gray-800 mb-2">前言</h2>
+                    <hr class="mb-4">
+                    <div class="article-content text-neutral-700 leading-relaxed">
+                        <p>{{ post.desc }}</p>
+                    </div>
+                </div>
+                <div class="p-6 pt-0">
+                    <a href="/posts/{{ post.id }}" class="inline-flex items-center text-primary hover:text-primary/80 font-medium transition-all-300">
+                        阅读全文 <i class="fa fa-arrow-right ml-1"></i>
+                    </a>
+                    <hr class="my-4">
+                    <div class="flex flex-wrap items-center justify-between mt-4 pt-4 border-t border-neutral-200">
+                        <ul>
+                            {% for foo in post.tag.all %}
+                                <li>
+                                    <div class="flex flex-wrap gap-2">
+                                        <a class="tag bg-neutral-100 text-neutral-700 py-1 px-3 rounded-full hover:bg-neutral-200 transition-all-300 text-sm">
+                                            <i class="fa fa-tag mr-1"></i> {{ foo.tname }}
+                                        </a>
+                                    </div>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                        <div class="flex items-center space-x-4 text-neutral-500">
+                            <button class="share-btn flex items-center hover:text-primary transition-all-300">
+                                <i class="fa fa-share-alt mr-1"></i> 分享
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        <div class="pagination flex justify-between items-center mt-8">
+            {% if page_obj.has_previous %}
+                <a href="/post/{{ page_obj.previous_page_number }}" class="bg-white text-primary px-4 py-2 rounded-md border border-primary hover:bg-primary hover:text-white transition-all-300 flex items-center" rel="prev">上一页</a>
+            {% endif %}
+
+            <span class="text-sm text-neutral-500">
+                第 {{ page_obj.number }} 页，共 {{ page_obj.paginator.num_pages }} 页
+            </span>
+
+            {% if page_obj.has_next %}
+                <a href="/post/{{ page_obj.next_page_number }}"  class="bg-white text-primary px-4 py-2 rounded-md border border-primary hover:bg-primary hover:text-white transition-all-300 flex items-center" rel="next">下一页</a>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

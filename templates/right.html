@@ -1,0 +1,49 @@
+<div class="lg:w-1/4 sidebar-sticky">
+    <!-- 分类 -->
+    <div class="bg-white rounded-lg shadow-card p-6 mb-6">
+        <h3 class="widget-title text-lg font-bold text-neutral-800 mb-4 pb-2 border-b border-neutral-200">分类</h3>
+        <div class="widget bg-white p-4 rounded-md shadow-md mb-8">
+            <ul class="space-y-3">
+                {% for rc in r_cate_post %}
+                    <li>
+                        <a href="/category/{{ rc.category }}" class="flex justify-between items-center text-neutral-700 hover:text-primary transition-all-300">
+                            {{ rc.category__cname }}
+                            <span class="bg-neutral-100 text-neutral-600 px-2 py-0.5 rounded-full text-xs">({{ rc.c }})</span>
+                        </a>
+                        
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <!-- 归档 -->
+    <div class="bg-white rounded-lg shadow-card p-6 mb-6">
+        <h3 class="widget-title text-lg font-bold text-neutral-800 mb-4 pb-2 border-b border-neutral-200">
+            <i class="fa fa-calendar mr-1"></i> 归档
+        </h3>
+        <ul class="space-y-3">
+            {% for rf in r_file_post %}
+                <li>
+                    <a class="flex justify-between items-center text-neutral-700 hover:text-primary transition-all-300" href="/archive/{{ rf.month|date:"Y" }}/{{ rf.month|date:"m" }}">
+                        {{ rf.month|date:"Y" }}年{{ rf.month|date:"m" }}月
+                        <span class="bg-neutral-100 text-neutral-600 px-2 py-0.5 rounded-full text-xs">({{ rf.count }})</span>
+                    </a>
+                    
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <!-- 近期文章 -->
+    <div class="bg-white rounded-lg shadow-card p-6">
+        <h3 class="widget-title text-lg font-bold text-neutral-800 mb-4 pb-2 border-b border-neutral-200">
+            <i class="fa fa-file-text-o mr-1"></i> 近期文章
+        </h3>
+        <ul class="space-y-3">
+            {% for rr in r_recent_post %}
+                <li>
+                    <a class="flex items-start text-neutral-700 hover:text-primary transition-all-300" href="/post/{{ rr.id }}" target="_blank">{{ rr.title|truncatechars:'10' }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>

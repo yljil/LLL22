@@ -1,0 +1,141 @@
+.article {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+.article-meta {
+    font-size: 14px;
+    color: #999;
+}
+
+.article-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+.article-title:hover {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.article-entry {
+    margin-top: 10px;
+    line-height: 1.6;
+}
+
+.article-more-link a {
+    color: #007BFF;
+}
+
+.article-more-link a:hover {
+    text-decoration: underline;
+}
+
+.article-footer {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.article-share-link {
+    color: #999;
+}
+
+.article-share-link:hover {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.article-tag-list li a {
+    color: #007BFF;
+    border: 1px solid #007BFF;
+    border-radius: 3px;
+    padding: 3px 6px;
+    margin-right: 5px;
+}
+
+.article-tag-list li a:hover {
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
+}
+.article-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    position: relative;
+    margin-top: 30px;
+}
+
+/* 文章头部样式 */
+.article-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #999; /* 颜色变浅 */
+    font-size: 14px;
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+    top: 15px;
+    z-index: 1;
+}
+
+/* 文章标题样式 */
+.article-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* 文章内容样式 */
+.article-content {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* 阅读全文按钮样式 */
+.read-more-btn {
+    display: inline-block;
+    padding: 8px 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #f4f4f4;
+    color: #333;
+    text-decoration: none;
+}
+
+.read-more-btn:hover {
+    background-color: #eaeaea;
+}
+
+/* 文章标签样式 */
+.article-tags {
+    margin-top: 10px;
+}
+
+.tag {
+    margin-right: 5px;
+    padding: 3px 6px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #f4f4f4;
+    color: #333;
+    text-decoration: none;
+}
+
+/* 分享按钮样式 */
+.share-btn {
+    float: right;
+    margin-top: 5px;
+    color: #999;
+    text-decoration: none;
+}
+
+.share-btn:hover {
+    color: #333;
+}
